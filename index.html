@@ -394,17 +394,18 @@
     <p class="contact-sub">Whether you're looking to grow through partnerships, build brand visibility, or enter a new market — we'd love to hear what you're building.</p>
   </div>
   <div>
-    <form class="contact-form" action="https://formspree.io/f/xojoprrp" method="POST" enctype="application/x-www-form-urlencoded">
-      <div class="form-field"><label>Your name</label><input type="text" placeholder="Full name"></div>
-      <div class="form-field"><label>Business name</label><input type="text" placeholder="Brand or company name"></div>
-      <div class="form-field"><label>Email address</label><input type="email" placeholder="you@yourbusiness.com"></div>
+    <form class="contact-form" action="https://formspree.io/f/xojoprrp" method="POST">
+      <input type="hidden" name="_subject" value="New enquiry from Ji & Co. website">
+      <div class="form-field"><label>Your name</label><input type="text" name="name" placeholder="Full name"></div>
+      <div class="form-field"><label>Business name</label><input type="text" name="business" placeholder="Brand or company name"></div>
+      <div class="form-field"><label>Email address</label><input type="email" name="email" placeholder="you@yourbusiness.com"></div>
       <div class="form-field"><label>Based in</label>
-        <select><option value="" disabled selected>Select your market</option><option>Singapore (SG)</option><option>Korea (KR)</option><option>Other</option></select>
+        <select name="market"><option value="" disabled selected>Select your market</option><option>Singapore (SG)</option><option>Korea (KR)</option><option>Other</option></select>
       </div>
       <div class="form-field"><label>Area of interest</label>
-        <select><option value="" disabled selected>Select a service</option><option>Strategic Partnerships & Business Growth</option><option>PR, Influencer & Brand Communications</option><option>Campaigns & Brand Activations</option><option>Marketing Advisory</option><option>Korea → Singapore Market Entry</option><option>Not sure yet — let's chat</option></select>
+        <select name="service"><option value="" disabled selected>Select a service</option><option>Strategic Partnerships & Business Growth</option><option>PR, Influencer & Brand Communications</option><option>Campaigns & Brand Activations</option><option>Marketing Advisory</option><option>Korea → Singapore Market Entry</option><option>Not sure yet — let's chat</option></select>
       </div>
-      <div class="form-field"><label>Message</label><textarea rows="3" placeholder="Tell us about your brand and what you're looking to achieve…"></textarea></div>
+      <div class="form-field"><label>Message</label><textarea rows="3" name="message" placeholder="Tell us about your brand and what you're looking to achieve…"></textarea></div>
       <div class="form-submit">
         <button type="submit" class="submit-btn">Send enquiry</button>
         <span class="submit-note">We respond within 48 hours.</span>
