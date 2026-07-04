@@ -134,7 +134,7 @@
   .form-field input, .form-field textarea, .form-field select { background: transparent; border: none; outline: none; font-family: var(--sans); font-size: 14px; color: var(--white); width: 100%; resize: none; appearance: none; -webkit-appearance: none; }
   .form-field input::placeholder, .form-field textarea::placeholder { color: #444; }
   .form-field select { color: #444; cursor: pointer; }
-  .form-field select option { color: var(--black); background: var(--white); }
+  .form-field select option { color: #999 !important; background: var(--white); }
   .form-submit { margin-top: 40px; display: flex; align-items: center; justify-content: space-between; }
   .submit-btn { font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); background: var(--black); border: none; padding: 16px 40px; cursor: pointer; transition: opacity 0.2s; }
   .submit-btn:hover { opacity: 0.75; }
@@ -181,6 +181,16 @@
     color: #999 !important;
     -webkit-text-fill-color: #999 !important;
   }
+
+  /* CUSTOM DROPDOWN */
+  .custom-select-wrapper { position: relative; width: 100%; }
+  .custom-select-wrapper select { display: none; }
+  .custom-select { font-family: var(--sans); font-size: 14px; color: #999; cursor: pointer; width: 100%; background: transparent; padding: 0; user-select: none; }
+  .custom-select-options { display: none; position: absolute; top: calc(100% + 8px); left: -18px; right: -18px; background: var(--white); border: 1px solid var(--light-grey); z-index: 999; box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
+  .custom-select-options.open { display: block; }
+  .custom-select-option { padding: 12px 18px; font-size: 13px; color: #999; cursor: pointer; font-family: var(--sans); transition: background 0.15s; }
+  .custom-select-option:hover { background: var(--light-grey); color: #666; }
+  .custom-select-option.selected { color: #0d0d0d; }
 </style>
 </head>
 <body>
@@ -384,7 +394,7 @@
     <p class="contact-sub">Whether you're looking to grow through partnerships, build brand visibility, or enter a new market — we'd love to hear what you're building.</p>
   </div>
   <div>
-    <form class="contact-form" action="https://formspree.io/f/xojoprrp" method="POST">
+    <form class="contact-form" action="https://formspree.io/f/xojoprrp" method="POST" enctype="application/x-www-form-urlencoded">
       <div class="form-field"><label>Your name</label><input type="text" placeholder="Full name"></div>
       <div class="form-field"><label>Business name</label><input type="text" placeholder="Brand or company name"></div>
       <div class="form-field"><label>Email address</label><input type="email" placeholder="you@yourbusiness.com"></div>
@@ -423,6 +433,26 @@
 <script>
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); });
+  function toggleDropdown(id) {
+    const options = document.getElementById(id + '-options');
+    document.querySelectorAll('.custom-select-options').forEach(o => {
+      if (o.id !== id + '-options') o.classList.remove('open');
+    });
+    options.classList.toggle('open');
+  }
+  function selectOption(id, value, el) {
+    document.getElementById(id + '-val').value = value;
+    document.getElementById(id + '-select').textContent = value;
+    document.getElementById(id + '-select').style.color = '#0d0d0d';
+    document.getElementById(id + '-options').classList.remove('open');
+    document.querySelectorAll('#' + id + '-options .custom-select-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.custom-select-wrapper')) {
+      document.querySelectorAll('.custom-select-options').forEach(o => o.classList.remove('open'));
+    }
+  });
   function toggleService(card) {
     const isOpen = card.classList.contains('open');
     document.querySelectorAll('.service-card').forEach(c => c.classList.remove('open'));
