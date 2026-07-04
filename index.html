@@ -165,6 +165,22 @@
     footer { flex-direction: column; gap: 24px; text-align: center; padding: 40px 24px; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
   }
+
+  /* FORCE FORM TEXT COLOR */
+  .contact-form .form-field { background-color: #ffffff !important; }
+  .contact-form .form-field input,
+  .contact-form .form-field textarea,
+  .contact-form .form-field select {
+    background-color: #ffffff !important;
+    color: #0d0d0d !important;
+    -webkit-text-fill-color: #0d0d0d !important;
+    opacity: 1 !important;
+  }
+  .contact-form .form-field input::placeholder,
+  .contact-form .form-field textarea::placeholder {
+    color: #999 !important;
+    -webkit-text-fill-color: #999 !important;
+  }
 </style>
 </head>
 <body>
@@ -230,7 +246,7 @@
   <div>
     <div class="section-label">About Ji & Co.</div>
     <h2 class="about-heading">The right brands.<br>The right people.<br><em>The right opportunities.</em></h2>
-    <img src="https://leejihye1211-cpu.github.io/jiandco/Jihye_Profile.jpg" alt="Jihye Lee — Founder of Ji & Co." class="about-photo">
+    <img src="https://raw.githubusercontent.com/leejihye1211-cpu/jiandco/main/Jihye%20Profile.jpg" alt="Jihye Lee — Founder of Ji & Co." class="about-photo">
     <div class="about-photo-caption">Jihye Lee · Founder</div>
   </div>
   <div class="about-right">
