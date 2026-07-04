@@ -17,7 +17,7 @@
     --serif: 'Cormorant Garamond', Georgia, serif;
     --sans: 'Inter', system-ui, sans-serif;
   }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; color-scheme: light; }
   body { font-family: var(--sans); background: var(--white); color: var(--black); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
   /* NAV */
@@ -126,17 +126,17 @@
   .contact-heading { font-family: var(--serif); font-size: clamp(40px, 5.5vw, 68px); font-weight: 300; line-height: 1.02; letter-spacing: -0.025em; color: var(--black); }
   .contact-heading em { font-style: italic; }
   .contact-sub { font-size: 13px; line-height: 1.9; color: var(--text-grey); margin-top: 24px; max-width: 340px; }
-  .contact-form { display: flex; flex-direction: column; padding-top: 8px; }
-  .form-field { border-bottom: 1px solid var(--light-grey); padding: 16px 0; display: flex; flex-direction: column; gap: 5px; }
-  .form-field label { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mid-grey); }
-  .form-field input, .form-field textarea, .form-field select { background: transparent; border: none; outline: none; font-family: var(--sans); font-size: 14px; color: var(--black); width: 100%; resize: none; appearance: none; -webkit-appearance: none; }
-  .form-field input::placeholder, .form-field textarea::placeholder { color: var(--mid-grey); }
-  .form-field select { color: var(--mid-grey); cursor: pointer; }
+  .contact-form { display: flex; flex-direction: column; gap: 10px; padding-top: 8px; }
+  .form-field { border-bottom: 1px solid #2a2a2a; padding: 16px 0; display: flex; flex-direction: column; gap: 5px; }
+  .form-field label { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: #aaa; }
+  .form-field input, .form-field textarea, .form-field select { background: transparent; border: none; outline: none; font-family: var(--sans); font-size: 14px; color: var(--white); width: 100%; resize: none; appearance: none; -webkit-appearance: none; }
+  .form-field input::placeholder, .form-field textarea::placeholder { color: #444; }
+  .form-field select { color: #444; cursor: pointer; }
   .form-field select option { color: var(--black); background: var(--white); }
   .form-submit { margin-top: 40px; display: flex; align-items: center; justify-content: space-between; }
   .submit-btn { font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); background: var(--black); border: none; padding: 16px 40px; cursor: pointer; transition: opacity 0.2s; }
   .submit-btn:hover { opacity: 0.75; }
-  .submit-note { font-size: 11px; color: var(--mid-grey); }
+  .submit-note { font-size: 11px; color: #555; }
 
   /* FOOTER */
   footer { background: var(--black); color: var(--white); padding: 48px 56px; display: flex; align-items: center; justify-content: space-between; }
@@ -393,7 +393,11 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="footer-copy">© 2026 Ji & Co. All rights reserved.</div>
+  <div style="text-align:right;">
+    <div style="font-size:11px; color:#888; margin-bottom:6px;"><a href="mailto:jihye@jiandco.co" style="color:#888; text-decoration:none;">jihye@jiandco.co</a></div>
+    <div style="font-size:11px; color:#888; margin-bottom:16px;"><a href="tel:+6598813747" style="color:#888; text-decoration:none;">+65 9881 3747</a></div>
+    <div class="footer-copy">© 2026 Ji & Co. All rights reserved.</div>
+  </div>
 </footer>
 
 <script>
